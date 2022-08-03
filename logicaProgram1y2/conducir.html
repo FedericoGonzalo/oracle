@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+        function puedesManejar(edadInput,licenciaInput){
+          if(edadInput>=18 && licenciaInput =="S"){
+            imprimir("Puedes manejar, eso si no escabies y manejes")
+          }
+          else{if(edadInput>=18){imprimir("eres un vejete pero sin licencia para chocar")}
+               else{imprimir("eres menor de edad ergo imposible que puedas chocar de manera legal")}      
+        }
+
+        }
+        var edad= parseInt(prompt("tu edad"));
+        var tieneLicencia=prompt("tenes licensia S o N");
+        if (tieneLicencia == "S"||tieneLicencia =="N"){
+             puedesManejar(edad,tieneLicencia);
+        }
+        else{alert("solo admite S o N");
+             location.reload();  }
+
+    </script>
+</body>
+</html>

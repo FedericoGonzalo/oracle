@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+       
+        var intentos=3;
+        var numeroPensado=Math.round(Math.random()*10);
+        var numeroInput=parseInt(prompt("Numero entre 0 y 10"));
+        if(numeroInput >=0 && numeroInput<=10){
+            if(numeroInput != numeroPensado){
+                imprimir("le pifiaste, "+numeroInput+" no es el correcto, el numero era "+numeroPensado);
+                saltarLinea();
+            }else{ imprimir("acertaste");
+                   saltarLinea();
+            }
+        }
+        else{
+            alert("atenti solo del 0 al 10");
+            location.reload();
+        }
+        
+      
+
+    </script>
+</body>
+</html>

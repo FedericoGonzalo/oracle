@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+       function sortea(n){
+        var resultado=Math.round(Math.random()*n);
+        return resultado
+       }
+
+        
+        var numeroInput=parseInt(prompt("Numero entre 0 y 10"));
+        var numeroPensado=sortea(numeroInput);
+        if(numeroInput >=0 && numeroInput<=10){
+            if(numeroInput != numeroPensado){
+                imprimir("le pifiaste, "+numeroInput+" no es el correcto, el numero era "+ numeroPensado);
+                saltarLinea();
+                if(numeroInput>numeroPensado){
+                    imprimir("tu numero "+numeroInput+" es mayor al numero sorteado "+ numeroPensado)
+                }
+                else{imprimir("tu numero "+numeroInput+" es menor al numero sorteado "+ numeroPensado)}
+            }
+            else{ imprimir("acertaste");
+                   saltarLinea();
+            }
+        }
+        else{
+            alert("atenti solo del 0 al 10");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

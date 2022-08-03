@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+        function imprimirDesdeHasta(){
+            var desde=parseInt(prompt("desde que numero"));
+            var hasta=parseInt(prompt("hasta que numero"));
+            if((desde<hasta)){
+                while(desde<=hasta){
+                    if((desde%2)==0){
+                        imprimir("yeah bro this is par and is " +desde); 
+                    }
+                    else{imprimir("yeah bro this is impar and is " +desde); }
+                    
+                    desde++;
+                }
+              imprimir("yeah bro imprimimos y es el fin , oh yeah ")  
+            }else{
+            alert("atenti el primer numero es mayor que el segundo");
+            location.reload();
+        }
+
+        }
+        imprimirDesdeHasta();
+    </script>
+</body>
+</html>

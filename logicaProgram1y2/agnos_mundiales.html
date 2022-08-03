@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+        function agnosMundiales(){
+         
+            while(agnoMundial<=agnoLimite){
+                 imprimir("un mundial fue en "+agnoMundial);
+                agnoMundial=agnoMundial + 4;
+              
+                saltarLinea();
+            }
+
+        }
+        var agnoMundial=1930;
+        var agnoLimite=parseInt(prompt("ingrese hasta que año"))
+        agnosMundiales();
+        
+    </script>
+</body>
+</html>

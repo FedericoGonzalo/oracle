@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>IMC</h1>
+    <script>
+    function saltarLinea(){
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<hr>")
+    }
+     function imprimir(frase){
+        document.write(frase)
+        saltarLinea()
+     }
+     function imc(peso,altura){
+        calc=peso/(altura*altura);
+    return calc
+     }
+
+var inputNombre=prompt("su nombre")
+var inputPeso=parseInt(prompt("su peso"))
+var inputAltura=parseFloat(prompt("su altura"))
+var imcInput= imc(inputPeso,inputAltura);
+imprimir(inputNombre+" su imc   es de "+ imcInput);
+
+if(imcInput < 18.5){imprimir(",insuficiencia" )}
+if(imcInput >=18.5 && imcInput <=24.9){imprimir(",normal" )}
+if(imcInput > 24.9 && imcInput < 30){imprimir(",sobre peso" )}
+if(imcInput >= 30){imprimir(",obesidad" )}
+  </script>
+</body>
+</html>

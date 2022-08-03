@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+        function promedio(cantidadFamila, totalAgnos,tuEdad){
+           totalAgnos=totalAgnos+tuEdad;
+           imprimir("tu edad " + tuEdad)
+           for(i=1;i<=cantidadFamila;i++){
+            var relacion=prompt("relacion");
+            var edadRelacion=parseInt(prompt("cuantos años tiene " + relacion));
+            imprimir("Tu " + relacion +" tiene " +edadRelacion +" años");
+            totalAgnos=totalAgnos+edadRelacion;
+           }
+           imprimir("el promedio de tu familia es "+(totalAgnos/(cantidadFamila+1)));
+        }
+        var totalAgnos=0;
+        var tuEdad=parseInt(prompt("Tu edad"));
+        var cantidadFamila=parseInt(prompt("cuantos integrantes tiene la familia sin contarte a ti"));
+        promedio(cantidadFamila,totalAgnos,tuEdad);
+    </script>
+</body>
+</html>

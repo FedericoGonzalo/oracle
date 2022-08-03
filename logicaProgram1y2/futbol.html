@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+   function imprimir(impresion){
+    document.write(impresion);
+    saltarLinea();
+   }
+  
+   function puntaje(victorias,empates){
+   var  puntos =victorias*3+empates;
+   if(puntos==ptosPasados){alert(puntos+" puntos, tuvo igual que el año pasado")}
+   else if (puntos<ptosPasados){alert(puntos+" puntos, tuvo menos que el año pasado")}
+   else return (alert(puntos+" puntos, tuvo mas que el año pasado"))
+     
+   } 
+   var inputVictorias=parseInt(prompt("cantidad victorias"));
+   var inputEmpates=parseInt(prompt("cantidad empates")); 
+   var ptosPasados=28;
+ //  var inputDerrotas=parseInt(prompt("cantidad derrotas"));
+   puntaje(inputVictorias,inputEmpates);
+  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<hr>");
+        }
+        function imprimir(frase){
+            document.write(frase);
+            saltarLinea();
+        }
+        function multiplicacionWhile(por,hasta){
+            var multiplica=0;
+           
+            while(multiplica<=hasta){
+               
+                imprimir(por +"x"+multiplica+"="+ (multiplica*por));
+               
+                multiplica=multiplica+1;
+            }
+
+        }
+        function multiplicacionFor(por,hasta){
+           
+           
+           for( var multiplica=0;multiplica<=hasta;multiplica++){
+               
+                imprimir(por +"x"+multiplica+"="+ (multiplica*por));
+               
+               
+            }
+
+        }
+        var multiplicador=parseInt(prompt("multiplicador"));
+        var hastaQueNumero=parseInt(prompt("hasta que numero multiplicar"));
+       imprimir("while");
+        multiplicacionWhile(multiplicador,hastaQueNumero);
+        imprimir("for");
+        multiplicacionFor(multiplicador,hastaQueNumero);
+
+    </script>
+</body>
+</html>
