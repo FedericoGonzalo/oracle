@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        function dibujarRectangulo(x, y, base, altura, color) {
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+
+            pincel.fillStyle = color;
+            pincel.fillRect(x, y, base, altura);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, base, altura);
+        }
+
+        function escribirTexto(x, y, texto) {
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+
+            pincel.font = "15px Georgia";
+            pincel.fillStyle = "black";
+            pincel.fillText(texto, x, y);
+        }
+      
+        function barraArray(agnoTexto,agnoArray,x,y){
+            escribirTexto(x, y-15, agnoTexto);
+         
+           var w=0;
+            for(var index=0;index<agnoArray.length;index++){
+               var z=(200*agnoArray[index])/100;
+               dibujarRectangulo(x,y+w,80,z,colores[index]);
+               w=w+z;
+                
+
+            }
+            
+
+
+         }
+       
+        var colores =["blue","green","yellow","red","grey"];   
+        var agno2009 = [6, 47, 41, 3, 3]
+        var agno2019 = [81, 9, 3, 3,4]
+        barraArray("2009",agno2009,150,30);
+        barraArray("2019",agno2019,300,30);
+       /*
+       //barra principal 2009
+        escribirTexto(0, 15, "2009");
+        
+        dibujarRectangulo(0, 20, 100, 200, "grey");
+        //chrome 6% 
+        dibujarRectangulo(0, 20, 100, ((200 * 6) / 100), "yellow")
+  
+       //barra principal 2019
+        escribirTexto(200, 15, "2019");
+        
+        dibujarRectangulo(200, 20, 100, 200, "grey");
+        //chrome 81% 
+        dibujarRectangulo(200, 20, 100, ((200 * 81) / 100), "yellow")
+  
+        */
+    </script>
+</body>
+
+</html>

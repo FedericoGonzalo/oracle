@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600px" height="400px"> </canvas>
+
+    <script>
+
+        function dibujarCuadrado(x, y, color) {
+            var lienzo = document.querySelector("canvas");
+            var dibujador = lienzo.getContext("2d");
+
+            dibujador.fillStyle = color;
+            dibujador.fillRect(x, y, 50, 50);
+            dibujador.strokeStyle = "black";
+            dibujador.strokeRect(x, y, 50, 50);
+
+
+        }
+
+
+        function conWhile() {
+            var x = 0;
+            while (x < 600) {
+                dibujarCuadrado(x, 0, "green");
+                x = x + 50;
+            }
+        }
+
+        function conForFila() {
+            for (x = 0; x < 600; x = x + 50) {
+                dibujarCuadrado(x, 0, "red");                
+                dibujarCuadrado(x, 100, "red");
+                dibujarCuadrado(x, 200, "red");
+                dibujarCuadrado(x, 300, "red");
+            }
+            
+            }
+
+        function conForColumna(){for (y = 0; y < 150; y = y + 50) {
+                dibujarCuadrado(0, y, "blue");
+                dibujarCuadrado(50, y, "blue");
+                dibujarCuadrado(100, y, "blue");
+
+
+            }
+
+            }
+         
+        conForFila();
+        conForColumna();
+    </script>
+</body>
+
+</html>

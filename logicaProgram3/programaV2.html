@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <canvas width="600px" height="400px"> </canvas>
 
     <script>
-        var lienzo=document.querySelector("canvas");
-        var dibujador=lienzo.getContext("2d");
-        dibujador.fillStyle="white";
-        dibujador.fillRect(0,0,600,400);
-        
-        dibujador.fillStyle="green";
-        dibujador.fillRect(0,0,150,350);
-        
-        dibujador.fillStyle="violet";
-        dibujador.fillRect(250,0,300,400);
-        
-        dibujador.fillStyle="blue";
-        dibujador.fillRect(400,0,600,400);
 
-        //triangulo
-        dibujador.fillStyle="red";
-        dibujador.beginPath();
-        dibujador.moveTo(300,200);
-        dibujador.lineTo(250,400);
-        dibujador.lineTo(450,400);
-        dibujador.fill();
-        //cirulo 1
-        dibujador.fillStyle="orange";
-        dibujador.beginPath();
-        dibujador.arc(0,400,50,0,2*3.14);//1 y2 posision,3 tamaño,4 angulo inicial,5 angulo final (2*pi)
-        dibujador.fill();
-        //circulo 2
-        dibujador.fillStyle="orange";
-        dibujador.beginPath();
-        dibujador.arc(150,400,50,0,2*3.14);
-        dibujador.fill();
-         //circulo 3
-         dibujador.fillStyle="orange";
-        dibujador.beginPath();
-        dibujador.arc(200,0,50,0,2*3.14);
-        dibujador.fill();
+        function dibujarCuadrado(x,y,color) {
+            var lienzo = document.querySelector("canvas");
+            var dibujador = lienzo.getContext("2d");
 
-         //circulo 4
-         dibujador.fillStyle="orange";
-        dibujador.beginPath();
-        dibujador.arc(200,200,50,0,2*3.14);
-        dibujador.fill();
+            dibujador.fillStyle = color;
+            dibujador.fillRect(x, y, 50, 50);
+            dibujador.strokeStyle = "black";
+            dibujador.strokeRect(x, y, 50, 50);
+
+
+        }
         
+
+
+
+       
+      //fila sup rojo verde azul gris
+       dibujarCuadrado(0,0,"red");
+       dibujarCuadrado(50,0,"green");
+       dibujarCuadrado(100,0,"blue");
+       dibujarCuadrado(150,0,"grey");
+     //diagonal arriba izq  
+       dibujarCuadrado(0,50,"red");
+       dibujarCuadrado(50,100,"green");
+       dibujarCuadrado(100,150,"blue");
+       dibujarCuadrado(150,200,"grey");
+       //diagonal abajo izq
+       dibujarCuadrado(0,200,"red");
+       dibujarCuadrado(50,150,"green");
+       dibujarCuadrado(100,100,"blue");
+       dibujarCuadrado(150,50,"grey");
+       
+       //fila inf rojo verde azul gris
+       dibujarCuadrado(0,250,"red");
+       dibujarCuadrado(50,250,"green");
+       dibujarCuadrado(100,250,"blue");
+       dibujarCuadrado(150,250,"grey");
+
+
     </script>
 </body>
+
 </html>
