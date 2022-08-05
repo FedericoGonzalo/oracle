@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+
+
+        function disenioCircunferncia(x, y, radio) {
+            pincel.fillStyle = "blue";
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, 600, 400);
+
+        }
+        //hacia la derecha
+        function actualizarPantalla() {
+
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+
+
+            x++
+
+
+        }
+        //hacia la derecha loop
+        function actualizarPantalla1() {
+
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+            
+
+            disenioCircunferncia(x, 40, 10);
+
+            if (x < 600) { x++ } else {  x = 0 };
+
+
+        }
+        //hacia la derecha y de vuelta hacia la izq
+        function actualizarPantalla2() {
+        
+           if(x<=0){p=1}else if(x>=600){p=-1};
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+          x=x+p;
+
+           
+
+
+        }
+        var x = 0;
+        
+    //  setInterval(actualizarPantalla, 50);
+    //  setInterval(actualizarPantalla1, 50);
+        setInterval(actualizarPantalla2, 50);
+
+
+
+
+    </script>
+</body>
+
+</html>
