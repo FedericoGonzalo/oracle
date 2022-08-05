@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <br>
+    <hr>
+    score
+    <h1></h1>
+    <script>
+        var score = document.querySelector("h1");
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0, 0, 600, 400);
+
+
+        function disenioCircunferncia(x, y, radio, color) {
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
+            pincel.fill();
+        }
+        function limpiarPantalla() {
+            pincel.clearRect(0, 0, 600, 400);
+            pincel.fillStyle = "lightgrey";
+            pincel.fillRect(0, 0, 600, 400);
+
+        }
+        //hacia la derecha
+        function actualizarPantalla() {
+
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+
+
+            x++
+
+
+        }
+        //hacia la derecha loop
+        function actualizarPantalla1() {
+
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+
+
+            disenioCircunferncia(x, 40, 10);
+
+            if (x < 600) { x++ } else { x = 0 };
+
+
+        }
+        //hacia la derecha y de vuelta hacia la izq
+        function actualizarPantalla2() {
+
+            if (x <= 0) { p = 1 } else if (x >= 600) { p = -1 };
+            limpiarPantalla();
+
+            disenioCircunferncia(x, 20, 10);
+            x = x + p;
+
+
+
+
+        }
+        
+        
+        
+        //  setInterval(actualizarPantalla, 50);
+        //  setInterval(actualizarPantalla1, 50);
+        //    setInterval(actualizarPantalla2, 50);
+
+        function crearObjetivo() {  //crear objeto lo voy hacer tipo the who , aviacion britanica
+            var radio = 20 + Math.round(Math.random() * 50);//20 para minimo ,50 x que el max que quiero es 70(50+20)
+            var x = Math.floor(Math.random() * (600));
+            var y = Math.floor(Math.random() * (400));
+
+            while (y >= (400 - (radio * 2))) {
+                y = Math.floor(Math.random() * (400));
+            }
+            while (x >= (600 - (radio * 2))) {
+                x = Math.floor(Math.random() * (600));
+            }
+            //exterior
+            disenioCircunferncia(x, y, radio, "blue");
+            //medio
+            disenioCircunferncia(x, y, radio / 1.5, "white");
+            //centro
+            disenioCircunferncia(x, y, radio / 3, "red");
+           console.log("datos objetivo")
+            console.log("x" + x)
+            randomX=x;
+            console.log("y" + y)
+            randomY=y;
+            console.log("radio" + radio)
+            randomRadio=radio;
+        }
+        // funcion llamar objetivo
+        function actualizarPantalla3() {
+            limpiarPantalla();
+            crearObjetivo();
+            
+        }
+        setInterval(actualizarPantalla3, 5000);
+       
+        //funcion disparar
+        var disparos = 0;
+     
+         var   randomX=0;
+       
+         var   randomY=0;
+         
+         var   randomRadio=0;
+        function disparar(e) {
+            var dispX = e.pageX - lienzo.offsetTop;
+            var dispY =e.pageY - lienzo.offsetTop;
+            
+           disparos++;
+          
+           
+           console.log("randomX x fuera funcion" +randomX);    
+           console.log("randomY x fuera funcion" +randomY); 
+           console.log("randomRadio x fuera funcion" +randomRadio); 
+            
+            console.log("soy disparos=" + disparos);
+            console.log("dispX="+dispX);
+            console.log("dispY="+dispY);
+
+          if (  (dispX<(randomX+randomRadio)) &&
+                (dispX>(randomX-randomRadio)) &&
+                (dispY<(randomY+randomRadio)) &&
+                (dispY>(randomY-randomRadio))  ){
+                   alert("tiro certero")
+                }
+           
+
+
+
+
+        }
+        //  crearObjetivo();
+        //  actualizarPantalla3();
+      
+    lienzo.onclick = disparar;
+    </script>
+</body>
+
+</html>

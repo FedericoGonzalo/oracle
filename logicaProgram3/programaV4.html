@@ -13,8 +13,8 @@
     <script>
         var lienzo = document.querySelector("canvas");
         var pincel = lienzo.getContext("2d");
-        pincel.fillStyle = "lightgrey";
-        pincel.fillRect(0, 0, 600, 400);
+    //    pincel.fillStyle = "lightgrey";
+      //  pincel.fillRect(0, 0, 600, 400);
 
 
         function disenioCircunferncia(x, y, radio) {
@@ -25,6 +25,8 @@
         }
         function limpiarPantalla() {
             pincel.clearRect(0, 0, 600, 400);
+            pincel.fillStyle = "lightgrey";
+            pincel.fillRect(0, 0, 600, 400);
 
         }
         //hacia la derecha
