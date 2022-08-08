@@ -29,22 +29,23 @@
 
         puedoDibujar = false;
 
-
+        var color="orange";
 
         function dibujarCirculo(evento) {
-
-
-            if (puedoDibujar
-
-            ) {
                 var x = evento.pageX - pantalla.offsetLeft;
                 var y = evento.pageY - pantalla.offsetTop;
-                
+            
 
-                pincel.fillStyle = 'blue';
+            if (puedoDibujar&&((x>154)||(y>53))
+
+            ) {    
+                
+                pincel.fillStyle =color;
                 pincel.beginPath();
-                pincel.arc(x, y, 5, 0, 2 * 3.14);
-                pincel.fill();
+                pincel.arc(x, y,5, 0, 2 * 3.14);
+                pincel.fill();  
+        
+               
             }
 
         }
@@ -52,8 +53,8 @@
         pantalla.onmousemove = dibujarCirculo;
 
         function habilitarDibujar() {
-
-            puedoDibujar = true;
+              
+                 puedoDibujar = true;  
         }
 
         function deshabilitarDibujar() {
@@ -61,9 +62,28 @@
             puedoDibujar = false;
         }
 
+        function cambiarColor(evento){
+                var x = evento.pageX - pantalla.offsetLeft;
+                var y = evento.pageY - pantalla.offsetTop;
+                if((x>0&&x<50)&&(y>0&&y<50)){
+                    color="red";
+                }
+                if((x>50&&x<100)&&(y>0&&y<50)){
+                    color="green";
+                }
+                if((x>100&&x<150)&&(y>0&&y<50)){
+                    color="blue";
+                }
+
+
+
+        }
+
         pantalla.onmousedown = habilitarDibujar;
 
         pantalla.onmouseup = deshabilitarDibujar;
+          pantalla.onclick = cambiarColor;
+        
 
     </script>
 </body>
