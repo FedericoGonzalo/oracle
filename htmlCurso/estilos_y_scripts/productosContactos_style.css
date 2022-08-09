@@ -81,3 +81,57 @@ footer{
     color: #ffffff;
     margin:1.25rem ;
 }
+main{
+    width: 58.75rem ;
+    margin: 0 auto;
+}
+form{
+    margin:2.5rem 0;
+}
+form label, form legend{
+    display: block;
+    font-size: 1.25rem;
+    margin:0 0 0.625rem;
+}
+
+.inputIngreso{
+    display: block;
+    margin:0 0 1.25rem;
+    padding: 0.625rem 1.563rem;
+    width: 50%;
+}
+.labelCheckbox{
+    margin: 1.25rem 0;
+}
+.botonEnviar{
+    width: 40%;
+    padding: 0.938rem 0;
+    font-size:1.125rem ;
+    color: white;
+    background: #c78c19;
+    border: none;
+    border-radius: 0.313rem;
+    transition:1.5s all;
+    cursor: pointer;
+}
+.botonEnviar:hover{
+    background: darkorange;
+    transform:  scale(1.25)  ;
+
+}
+table{
+    margin:2.5rem 2.5rem;
+
+}
+thead{
+    background:#555555;
+    color:white;
+    font-weight: bold;
+}
+td,th{
+    border:0.063rem solid #000000;
+    padding:0.5rem 0.938rem;
+
+
+
+}
