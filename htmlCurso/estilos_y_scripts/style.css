@@ -153,7 +153,7 @@ width: 58.75rem ;
       font-size:2em;
       margin: 0 0 1em;
       clear:left;
-    
+    text-shadow:0.125rem 0.125rem 0.4rem #000000;
 } 
 
 
@@ -201,11 +201,12 @@ p:first-line{
  .diferenciales{
     padding: 3em 0;
     background: #888888;
-
+    
  }
  .contenidoDiferenciales{
     width: 40rem;
     margin: 0 auto;
+  
 
  }
  .listaDiferenciales{
@@ -228,14 +229,36 @@ p:first-line{
  
  .imgDif{
     width: 60%;
-   
+     transition: 500ms;
+     box-shadow:0.625rem 0.625rem 0.625rem 0.1rem #055555;  /*1°pos der neg izq 2°pos abajo neg arriba 3°difuminacion 4°expancion 5°color*/
+    border-radius: 0.75%;
  }
  .imgDif:hover{
      opacity: 0.3;
-     transition: 400ms;
+    
  }
  .video{
 
     width: 35rem;
     margin: 1em auto;
+    
+ }
+
+
+ @media screen and (max-width:30rem){
+    body{
+        background: red;
+    }
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .caja, .principal, .mapaContenido, .contenidoDiferenciales, .video {
+        width:auto;
+    }
+    .listaDiferenciales, .imgDif{
+        width: 100%;
+    }
  }
