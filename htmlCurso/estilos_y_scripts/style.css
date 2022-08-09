@@ -1,3 +1,7 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
 header{
     background-color: #bbbbbb;
     padding: 1.25rem 0;
@@ -81,10 +85,7 @@ footer{
     color: #ffffff;
     margin:1.25rem ;
 }
-main{
-    width: 58.75rem ;
-    margin: 0 auto;
-}
+
 form{
     margin:2.5rem 0;
 }
@@ -135,3 +136,106 @@ td,th{
 
 
 }
+/*css para index.html*/
+.banner{
+  width :100%;
+
+}
+.principal{
+    padding:3em 0;
+background: #fefefe;
+width: 58.75rem ;
+    margin: 0 auto;
+
+}
+.tituloPrincipal{
+      text-align:center;
+      font-size:2em;
+      margin: 0 0 1em;
+      clear:left;
+    
+} 
+
+
+
+p:first-line{
+    font-style: italic;
+}
+
+
+.principal p{
+    margin: 0 0 1em;
+
+}
+
+.principal strong{
+   font-weight: bold;
+
+}
+
+.principal em{
+    font-style: italic;
+ 
+ }
+ .utensillos{
+    width: 7.5rem;
+    float:left;
+    margin: 0 1.25rem 1.25rem 0;
+
+
+ }
+ .mapa{
+    padding:3em 0;
+    background:linear-gradient(#fefefe,#888888);
+ }
+
+ .mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+ }
+ .mapaContenido{
+    width:58.75rem;
+    margin:0 auto;
+    
+ }
+ .diferenciales{
+    padding: 3em 0;
+    background: #888888;
+
+ }
+ .contenidoDiferenciales{
+    width: 40rem;
+    margin: 0 auto;
+
+ }
+ .listaDiferenciales{
+    width:40%;
+    display:inline-block ;
+    vertical-align: top;
+
+ }
+ .itemsList{
+    line-height: 1.5;
+
+
+ }
+.itemsList:first-child{
+    font-weight: bold;
+}
+.itemsList:before{
+    content: "✯";
+}
+ 
+ .imgDif{
+    width: 60%;
+   
+ }
+ .imgDif:hover{
+     opacity: 0.3;
+     transition: 400ms;
+ }
+ .video{
+
+    width: 35rem;
+    margin: 1em auto;
+ }
